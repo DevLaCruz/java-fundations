@@ -1,44 +1,44 @@
 public class CalculatorCommandLineArguments {
     public static void main(String[] args) {
         if(args.length != 3){
-            System.err.println("Por favor ingresar una operación " +
-                    "(suma, resta, div o multi) y dos enteros");
+            System.err.println("Please enter a operation" +
+                    "(addition, rest, division o multiplication) and two integers");
             System.exit(-1);
         }
 
-        String operacion = args[0];
+        String operation = args[0];
         int a = 0;
         int b = 0;
-        double resultado = 0.00;
+        double result = 0.00;
 
         try {
             a = Integer.parseInt(args[1]);
             b = Integer.parseInt(args[2]);
         } catch (NumberFormatException e){
-            System.err.println("Cuidado a y b deben ser enteros, vuelva a intentar!");
+            System.err.println("Warning a and b must be integers, try again!");
             System.exit(-1);
         }
-        switch(operacion){
-            case "suma":
-                resultado = a+b;
+        switch(operation){
+            case "addition":
+                result = a+b;
                 break;
-            case "resta":
-                resultado = a-b;
+            case "rest":
+                result = a-b;
                 break;
-            case "multi":
-                resultado = a*b;
+            case "multiplication":
+                result = a*b;
                 break;
-            case "div":
+            case "division":
                 if(b == 0){
-                    System.err.println("No se puede dividir por zero!");
+                    System.err.println("You can't divide by zero!");
                     System.exit(-1);
                 }
-                resultado = (double)a/b;
+                result = (double)a/b;
                 break;
             default:
-                resultado = a+b;
+                result = a+b;
         }
 
-        System.out.println("Resultado de la operación '" + operacion + "' es: " +resultado);
+        System.out.println("operation result'" + operation + "' es: " +result);
     }
 }

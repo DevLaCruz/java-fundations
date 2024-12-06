@@ -13,33 +13,33 @@ public class LoginLogicalOperators {
 
         usernames[2] = "pepe";
         passwords[2] = "12345";*/
-        String[] usernames = {"andres", "admin", "pepe"};
+        String[] usernames = {"alejandro", "admin", "pepe"};
         String[] passwords = {"123", "1234", "12345"};
 
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("Ingrese el username");
+        System.out.println("type the username");
         String u = scanner.next();
 
-        System.out.println("Ingrese el password");
+        System.out.println("type the password");
         String p = scanner.next();
 
-        boolean esAutenticado = false;
+        boolean isAuthenticated = false;
 
         for(int i = 0; i < usernames.length; i++){
-            esAutenticado = (usernames[i].equals(u) && passwords[i].equals(p))? true: esAutenticado;
+            isAuthenticated = (usernames[i].equals(u) && passwords[i].equals(p))? true: isAuthenticated;
 
             /*if( (usernames[i].equals(u) && passwords[i].equals(p)) ){
-                esAutenticado = true;
+                isAuthenticated = true;
                 break;
             }*/
         }
 
-        String mensaje = esAutenticado ? "Bienvenido usuario ".concat(u).concat("!") :
+        String mensaje = isAuthenticated ? "Bienvenido usuario ".concat(u).concat("!") :
                 "Username o contraseña incorrecto!\nLo sentimos, requiere autenticación";
         System.out.println("mensaje = " + mensaje);
 
-        /*if(esAutenticado){
+        /*if(isAuthenticated){
             System.out.println("Bienvenido usuario ".concat(u).concat("!"));
         } else {
             System.out.println("Username o contraseña incorrecto!");
